@@ -1,20 +1,20 @@
 import pytest
 import allure
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from pages.home import HomePage
+from selenium.webdriver.firefox.options import Options
+from pages.home_page import HomePage
 from constants import BASE_URL
 
 
 @pytest.fixture
 def driver():
-    with allure.step('Открываем браузер Chrome'):
+    with allure.step('Открываем браузер Firefox'):
         options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=2560,1440")
-    driver = webdriver.Chrome(options=options)
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=2560,1440")
+        driver = webdriver.Firefox(options=options)
 
     yield driver
 

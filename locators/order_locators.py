@@ -38,6 +38,7 @@ class OrderPageLocators:
         By.XPATH, "//input[contains(@class, 'Input_Input') and contains(@placeholder, 'Комментарий для курьера')]")
     submit_button = (
         By.XPATH, "//div[contains(@class, 'Order_Content')]//button[contains(@class, 'Button_Button') and contains(text(), 'Заказать')]")
-    # Используется кнопка "Нет" вместо "Да", т.к. сейчас в тренажере не работает кнопка "Да"
     confirm_button = (
-        By.XPATH, "//div[contains(@class, 'Order_Modal')]//button[contains(@class, 'Button_Button') and contains(text(), 'Нет')]")
+        By.XPATH, "//div[contains(@class, 'Order_Modal')]//button[contains(@class, 'Button_Button') and contains(text(), 'Да')]")
+    order_success_message = (
+        By.XPATH, "//div[contains(@class, 'Order_ModalHeader') and contains(text(), 'Заказ оформлен')]")
